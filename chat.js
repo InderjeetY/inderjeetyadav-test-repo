@@ -89,12 +89,12 @@ function nextStep(userText) {
             break;
         case 3: // User just sent their Phone
             userData.phone = userText;
-            addMessage('bot', 'Perfect. Now, please paste the job description.');
+            addMessage('bot', 'Perfect. Now, please paste the job description or a link to it.');
             chatTextarea.placeholder = "Paste the job description...";
             break;
         case 4: // User just sent the Job Description
             userData.jd = userText;
-            chatTextarea.placeholder = "Thank you! Sending...";
+            chatTextarea.placeholder = "Look forward to connecting with you soon!";
             
             // Disable the input area
             chatTextarea.disabled = true;
