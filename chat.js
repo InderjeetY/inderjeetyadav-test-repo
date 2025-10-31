@@ -129,7 +129,7 @@ downloadBtn.addEventListener('click', function(event) {
     sendBtn.disabled = (chatTextarea.value.trim() === '');
 
     // Start the conversation if it's the first time
-    if (conversationStep === 0) {
+    if (chatMessages.children.length === 0) {
         setTimeout(() => {
             addMessage('bot', 'Hello! Thanks for your interest. Before you download, I just need to get a few details. What is your full name?');
             chatTextarea.placeholder = "Your full name...";
