@@ -71,6 +71,8 @@ li {
 
 section {
     padding: 30px 40px;
+    /* Animation for page load */
+    animation: fadeIn 0.7s ease-out;
 }
 
 section:not(:last-child) {
@@ -115,8 +117,9 @@ header {
     border-radius: 8px;
     font-weight: 600;
     text-decoration: none;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     align-self: flex-start;
+    /* Added transitions for hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .download-btn i {
@@ -127,7 +130,9 @@ header {
     background-color: #157347;
     color: #ffffff;
     text-decoration: none;
-    box-shadow: 0 4px 12px rgba(25, 135, 84, 0.2);
+    /* Added hover effects */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(25, 135, 84, 0.3);
 }
 
 /* =========== SKILLS =========== */
@@ -202,6 +207,18 @@ footer {
     font-size: 0.9rem;
 }
 
+/* =========== ANIMATIONS =========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* =========== RESPONSIVE DESIGN =========== */
 @media (max-width: 768px) {
     body {
@@ -259,11 +276,6 @@ footer {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.6);
     animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 .chat-modal-content {
