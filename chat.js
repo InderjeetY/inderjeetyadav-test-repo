@@ -94,7 +94,7 @@ function nextStep(userText) {
             break;
         case 4: // User just sent the Job Description
             userData.jd = userText;
-            chatTextarea.placeholder = "Look forward to connecting with you soon!";
+            chatTextarea.placeholder = "Thank you! Sending...";
             
             // Disable the input area
             chatTextarea.disabled = true;
@@ -109,9 +109,14 @@ function nextStep(userText) {
                 addMessage('bot', '...');
             }, 800);
 
-            // Add bot's final response with the download link
+            // Add bot's final response with BOTH links
             setTimeout(() => {
-                addMessage('bot', 'Thank you! That\'s very helpful. Here is the download link: <br><br> <a href="InderjeetYadav.pdf" class="download-btn" download style="font-size: 0.9rem;"> <i class="fas fa-download"></i> Download Resume Now</a>');
+                addMessage('bot', 
+                    'Thank you! That\'s very helpful. Here is your download link:' +
+                    '<br><br> <a href="InderjeetYadav.pdf" class="download-btn" download style="font-size: 0.9rem;"> <i class="fas fa-download"></i> Download Resume Now</a>' +
+                    '<br><br> P.S. Want to skip the email tag? You can book a 15-minute chat directly on my calendar:' +
+                    '<br><br> <a href="https://calendly.com/inderjeet_yadav" target="_blank" class="download-btn" style="background-color: #0d6efd; font-size: 0.9rem;"> <i class="fas fa-calendar-alt"></i> Book a Meeting</a>'
+                );
             }, 2000);
             break;
     }
