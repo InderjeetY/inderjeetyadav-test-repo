@@ -44,7 +44,7 @@ function validateInput(text, step) {
     }
 }
 
-// --- NEW: Helper function to show errors ---
+// --- Helper function to show errors ---
 function showError() {
     chatError.style.display = 'block'; // Show the error container
     switch (conversationStep) {
@@ -89,7 +89,7 @@ function nextStep(userText) {
             break;
         case 3: // User just sent their Phone
             userData.phone = userText;
-            addMessage('bot', 'Perfect. Now, please paste the job description or a link to it.');
+            addMessage('bot', 'Perfect. Now, please provide the job description or a link to it.');
             chatTextarea.placeholder = "Paste the job description...";
             break;
         case 4: // User just sent the Job Description
@@ -109,13 +109,13 @@ function nextStep(userText) {
                 addMessage('bot', '...');
             }, 800);
 
-            // Add bot's final response with BOTH links
+            // Add bot's final response with both links
             setTimeout(() => {
                 addMessage('bot', 
                     'Thank you! That\'s very helpful. Here is your download link:' +
                     '<br><br> <a href="InderjeetYadav.pdf" class="download-btn" download style="font-size: 0.9rem;"> <i class="fas fa-download"></i> Download Resume Now</a>' +
-                    '<br><br> P.S. Want to skip the email tag? You can book a 15-minute chat directly on my calendar:' +
-                    '<br><br> <a href="https://calendly.com/inderjeet_yadav" target="_blank" class="download-btn" style="background-color: #0d6efd; font-size: 0.9rem;"> <i class="fas fa-calendar-alt"></i> Book a Meeting</a>'
+                    '<br><br>P.S. Interested in discussing the role? Feel free to book a 30-minute introductory call directly on my calendar:' +
+                    '<br><br> <a href="https://calendly.com/inderjeet_yadav" target="_blank" class="download-btn" style="background-color: #0d6efd; font-size: 0.9rem;"> <i class="fas fa-calendar-alt"></i> Book a 30-Min Call</a>'
                 );
             }, 2000);
             break;
@@ -133,7 +133,7 @@ downloadBtn.addEventListener('click', function(event) {
     // Ensure button is disabled on open if input is empty
     sendBtn.disabled = (chatTextarea.value.trim() === '');
 
-    // Start the conversation if it's the first time
+    // Start the conversation only if the chat window is empty
     if (chatMessages.children.length === 0) {
         setTimeout(() => {
             addMessage('bot', 'Hello! Thanks for your interest. Before you download, I just need to get a few details. What is your full name?');
@@ -154,11 +154,10 @@ modalOverlay.addEventListener('click', function(event) {
     }
 });
 
-// --- Handle sending the message (MODIFIED) ---
+// --- Handle sending the message ---
 sendBtn.addEventListener('click', function() {
     const userText = chatTextarea.value.trim();
 
-    // validateInput already checks for empty string, but this is a good safeguard.
     if (validateInput(userText, conversationStep)) {
         // Validation passed
         nextStep(userText);
@@ -170,7 +169,7 @@ sendBtn.addEventListener('click', function() {
     }
 });
 
-// --- NEW: Add event listener for typing ---
+// --- Add event listener for typing ---
 chatTextarea.addEventListener('input', function() {
     // Clear error as soon as user types
     chatError.textContent = '';
