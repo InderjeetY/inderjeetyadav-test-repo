@@ -18,7 +18,7 @@
                     <a href="https://github.com/inderjeety" target="_blank"><i class="fab fa-github"></i> github.com/inderjeety</a>
                 </div>
             </div>
-            <a href="InderjeetYadav.pdf" class="download-btn" download>
+            <a href="InderjeetYadav.pdf" class="download-btn" id="downloadBtn" download>
                 <i class="fas fa-download"></i> Download Resume
             </a>
         </header>
@@ -112,5 +112,20 @@
             <p>&copy; 2025 Inderjeet Yadav</p>
         </footer>
     </div>
+
+    <div id="chatModalOverlay" class="chat-modal-overlay">
+        <div class="chat-modal-content">
+            <span class="chat-modal-close">&times;</span>
+            <div id="chatMessages" class="chat-messages">
+                </div>
+            <div id="chatInputArea" class="chat-input-area">
+                <textarea id="chatTextarea" placeholder="Paste the job description..."></textarea>
+                <button id="chatSendBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
