@@ -12,7 +12,8 @@
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
-    <script src="app.js" defer></script>
+    <script src="email.js" defer></script>
+    <script src="chat.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -123,10 +124,10 @@
     <div id="chatModalOverlay" class="chat-modal-overlay">
         <div class="chat-modal-content">
             <span class="chat-modal-close">&times;</span>
-            <div id="chatMessages" class="chat-messages">
-                </div>
+            <div id="chatMessages" class="chat-messages"></div>
+            <div id="chatError" class="chat-error-message"></div>
             <div id="chatInputArea" class="chat-input-area">
-                <textarea id="chatTextarea" placeholder="Paste the job description..."></textarea>
+                <textarea id="chatTextarea" placeholder="..."></textarea>
                 <button id="chatSendBtn">
                     <i class="fas fa-paper-plane"></i>
                 </button>
